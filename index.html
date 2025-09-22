@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dreamy Canvas - Home</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link rel="icon" href="images/art1.jpg">
+  <style>
+    /* Background with overlay */
+    .hero {
+      position: relative;
+      background: url('images/bkg 2.jpg') no-repeat center center/cover;
+      color: #fff;
+      text-align: center;
+      padding: 100px 20px;
+      z-index: 1;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5); /* dark overlay for readability */
+      z-index: -1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .cta-button {
+      margin-top: 20px;
+      padding: 12px 24px;
+      background: #7dd3fc;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background: #38bdf8;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo"><h2>Dreamy Canvas</h2></div>
+      <div class="nav-menu">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="products.html" class="nav-link">Products</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="cart.html" class="nav-link active">Cart</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+        <h1 class="hero-title">Dreamy Canvas</h1>
+        <p class="hero-subtitle">Handcrafted Resin Art & Traditional Handicrafts</p>
+        <p class="hero-description">Discover unique, handmade resin creations that blend traditional craftsmanship with modern artistry</p>
+        <button class="cta-button" id="cta-to-products">Explore Our Collection</button>
+    </div>
+    <div class="hero-image">
+        <div class="floating-card">
+            <i class="fas fa-palette"></i>
+            <h3>Handcrafted</h3>
+        </div>
+    </div>
+  </section>
+
+
+  <!-- Scripts -->
+  <script src="js/utils.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.getElementById('cta-to-products')?.addEventListener('click', () => {
+      window.location.href = 'products.html';
+    });
+  </script>
+</body>
+</html>

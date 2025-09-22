@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dreamy Canvas - Payment</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="images/art1.jpg">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo"><h2>Dreamy Canvas</h2></div>
+      <div class="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="products.html" class="nav-link">Products</a>
+        <a href="cart.html" class="nav-link">Cart</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="contact" style="padding-top:120px;">
+    <div class="container">
+      <div class="section-header">
+        <h2 style="color:#f3f4f6;">Payment</h2>
+        <p>Review totals and select a payment option</p>
+      </div>
+      <div class="contact-form">
+        <div id="order-summary" style="margin-bottom:1rem;"></div>
+        <form id="paymentForm">
+          <div class="form-group">
+            <select id="paymentMethod" required>
+              <option value="">Select Payment Method</option>
+              <option value="cod">Cash on Delivery</option>
+              <option value="upi">UPI</option>
+              <option value="card">Card</option>
+            </select>
+          </div>
+          <button type="submit" class="submit-btn">Checkout</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/utils.js"></script>
+  <script src="js/cart.js"></script>
+  <script>
+    // Load summary
+    (function(){
+      const summary = document.getElementById('order-summary');
+      const items = (window.Cart && window.Cart.readCart()) || [];
+      if (!items.length) {
+        summary.innerHTML = '<p>No items in cart.</p>';
+        return;
+      }
+      const totals = window.Cart.calculateTotals(items);
+      const address = JSON.parse(localStorage.getItem('delivery_info') || '{}');
+      summary.innerHTML = `
+        <p><strong>Deliver to:</strong> ${address.fullName || ''}, ${address.address || ''}, ${address.city || ''}, ${address.state || ''} - ${address.pincode || ''}</p>
+        <p><strong>Subtotal:</strong> ${totals.f(totals.subtotal)} | <strong>Tax:</strong> ${totals.f(totals.tax)} | <strong>Total:</strong> ${totals.f(totals.total)}</p>
+      `;
+    })();
+
+    // Handle payment submit
+    document.getElementById('paymentForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const method = document.getElementById('paymentMethod').value;
+      if (!method) return alert('Select a payment method');
+      alert('Order placed!');
+      localStorage.removeItem('delivery_info');
+      if (window.Cart) window.Cart.clearCart();
+      window.location.href = 'index.html';
+    });
+  </script>
+</body>
+</html>
+
+

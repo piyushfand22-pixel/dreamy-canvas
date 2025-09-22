@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dreamy Canvas - Gallery</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="images/art1.jpg">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo"><h2>Dreamy Canvas</h2></div>
+      <div class="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="products.html" class="nav-link">Products</a>
+        <a href="gallery.html" class="nav-link active">Gallery</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="cart.html" class="nav-link">Cart</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Gallery Content -->
+  <section id="gallery" class="gallery">
+    <div class="container">
+        <div class="section-header">
+            <h2 style="color:#f3f4f6;">Gallery</h2>
+            <p>You are One step away From Customzing your Beautiful Moments</p>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <div class="gallery-placeholder">
+                    <i class="fas fa-image"></i>
+                    <p><img src="images/art6.jpg" alt="Resin artwork 6"></p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-placeholder">
+                    <i class="fas fa-image"></i>
+                    <p><img src="images/art4.jpg" alt="Resin artwork 4"></p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-placeholder">
+                    <i class="fas fa-image"></i>
+                    <p><img src="images/art3.jpg" alt="Resin artwork 3"></p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-placeholder">
+                    <!-- <i class="fas fa-image"></i> -->
+                    <p><img src="images/art2.jpg" alt="Resin artwork 2"></p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-placeholder">
+                    <!-- <i class="fas fa-image"></i> -->
+                    <p><img src="images/art1.jpg" alt="Resin artwork 1"></p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-placeholder">
+                    <!-- <i class="fas fa-image"></i> -->
+                    <p><img src="images/art5.jpg" alt="Resin artwork 5"></p>
+                </div>
+            </div>
+            
+            <!-- Added images from images/gallery -->
+            <div class="gallery-item"><div class="gallery-placeholder"><i class="fas fa-image"></i><p><img src="images/gallery/IMG-20250922-WA0052.jpg" alt="Gallery image 0052"></p></div></div>
+            <div class="gallery-item"><div class="gallery-placeholder"><i class="fas fa-image"></i><p><img src="images/gallery/IMG-20250922-WA0053.jpg" alt="Gallery image 0053"></p></div></div>
+            <div class="gallery-item"><div class="gallery-placeholder"><i class="fas fa-image"></i><p><img src="images/gallery/IMG-20250922-WA0054.jpg" alt="Gallery image 0054"></p></div></div>
+            <div class="gallery-item"><div class="gallery-placeholder"><i class="fas fa-image"></i><p><img src="images/gallery/IMG-20250922-WA0055.jpg" alt="Gallery image 0055"></p></div></div>
+            <div class="gallery-item"><div class="gallery-placeholder"><i class="fas fa-image"></i><p><img src="images/gallery/IMG-20250922-WA0056.jpg" alt="Gallery image 0056"></p></div></div>
+            <div class="gallery-item"><div class="gallery-placeholder"><i class="fas fa-image"></i><p><img src="images/gallery/IMG-20250922-WA0057.jpg" alt="Gallery image 0057"></p></div></div>
+            <div class="gallery-item"><div class="gallery-placeholder"><i class="fas fa-image"></i><p><img src="images/gallery/IMG-20250922-WA0058.jpg" alt="Gallery image 0058"></p></div></div>
+            <div class="gallery-item"><div class="gallery-placeholder"><i class="fas fa-image"></i><p><img src="images/gallery/IMG-20250922-WA0061.jpg" alt="Gallery image 0061"></p></div></div>
+        </div>
+    </div>
+</section>
+
+  <script src="js/utils.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/gallery.js"></script>
+  <script>
+    window.Gallery && window.Gallery.bootstrapGallery();
+  </script>
+</body>
+</html>

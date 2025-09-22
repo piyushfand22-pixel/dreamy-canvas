@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dreamy Canvas - Products</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="images/art1.jpg">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo"><h2>Dreamy Canvas</h2></div>
+      <div class="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="products.html" class="nav-link active">Products</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="cart.html" class="nav-link">Cart</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Products Content -->
+  <section id="products" class="products">
+    <div class="container">
+        <div class="section-header">
+            <h2 style="color:#f3f4f6;">Shop by Collection</h2>
+            <p>Discover our range of handcrafted resin art</p>
+        </div>
+        
+        <div class="product-categories">
+            <a class="category-btn" href="products-jewelry.html" data-category="jewelry">Jewelry</a>
+            <a class="category-btn" href="products-decor.html" data-category="decor">Home Decor</a>
+            <a class="category-btn" href="products-keychains.html" data-category="keychains">Keychains</a>
+            <a class="category-btn" href="products-festive.html" data-category="festive">Festive Collection</a>
+        </div>
+
+        <div class="container" style="text-align:center; margin-top:2rem;">
+          <p>Select a category to view products.</p>
+        </div>
+        <!-- Inline JSON fallback for file:// usage; kept in sync with data/products.json -->
+        
+    </div>
+</section>
+
+
+  <!-- Scripts -->
+  <script src="js/utils.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

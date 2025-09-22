@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dreamy Canvas - Delivery</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="images/art1.jpg">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo"><h2>Dreamy Canvas</h2></div>
+      <div class="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="products.html" class="nav-link">Products</a>
+        <a href="cart.html" class="nav-link">Cart</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="contact" style="padding-top:120px;">
+    <div class="container">
+      <div class="section-header">
+        <h2 style="color:#f3f4f6;">Deliver To</h2>
+        <p>Enter your delivery details</p>
+      </div>
+      <div class="contact-form">
+        <form id="deliveryForm">
+          <div class="form-group">
+            <input type="text" id="fullName" placeholder="Full Name" required>
+          </div>
+          <div class="form-group">
+            <input type="tel" id="phone" placeholder="Phone" required>
+          </div>
+          <div class="form-group">
+            <input type="text" id="address" placeholder="Address" required>
+          </div>
+          <div class="form-group">
+            <input type="text" id="city" placeholder="City" required>
+          </div>
+          <div class="form-group">
+            <input type="text" id="state" placeholder="State" required>
+          </div>
+          <div class="form-group">
+            <input type="text" id="pincode" placeholder="Pincode" required>
+          </div>
+          <button type="submit" class="submit-btn">Continue</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/utils.js"></script>
+  <script>
+    document.getElementById('deliveryForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const data = {
+        fullName: document.getElementById('fullName').value.trim(),
+        phone: document.getElementById('phone').value.trim(),
+        address: document.getElementById('address').value.trim(),
+        city: document.getElementById('city').value.trim(),
+        state: document.getElementById('state').value.trim(),
+        pincode: document.getElementById('pincode').value.trim(),
+      };
+      if (!data.fullName || !data.phone || !data.address || !data.city || !data.state || !data.pincode) return alert('Please fill all fields');
+      localStorage.setItem('delivery_info', JSON.stringify(data));
+      window.location.href = 'payment.html';
+    });
+  </script>
+</body>
+</html>
+
+
